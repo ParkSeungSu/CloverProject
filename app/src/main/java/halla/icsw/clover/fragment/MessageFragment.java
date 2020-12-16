@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -22,8 +21,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 
-import halla.icsw.clover.MainActivity;
 import halla.icsw.clover.R;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class MessageFragment extends Fragment {
@@ -42,6 +42,8 @@ public class MessageFragment extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_message, container, false);
         sendButton=view.findViewById(R.id.sendButton);
+        sharedPreferences=getActivity().getSharedPreferences(SHARE_NAME,MODE_PRIVATE);
+        editor=sharedPreferences.edit();
 
         messageEdit=view.findViewById(R.id.messageEdit);
 
@@ -69,7 +71,7 @@ public class MessageFragment extends Fragment {
     public void uploadData(){
         String data=messageEdit.getText().toString();
         if(data != null && !data.equals("") ) {
-
+            insertToDatabase(data);
             setSavedCount();
             messageEdit.setText("");
             Toast.makeText(getActivity(), "멋진 메시지에요!", Toast.LENGTH_SHORT).show();
