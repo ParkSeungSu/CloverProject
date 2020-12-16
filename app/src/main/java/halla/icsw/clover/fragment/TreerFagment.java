@@ -14,10 +14,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import halla.icsw.clover.MainActivity;
 import halla.icsw.clover.R;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -98,9 +95,7 @@ public class TreerFagment extends Fragment {
     public void uploadData(){
         String data=messageEdit.getText().toString();
         if(data != null && !data.equals("") ) {
-            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-            DatabaseReference rootRef= firebaseDatabase.getReference();
-            rootRef.setValue(data);
+
             setSavedCount();
             messageEdit.setText("");
             Toast.makeText(getActivity(), "멋진 메시지에요!", Toast.LENGTH_SHORT).show();
