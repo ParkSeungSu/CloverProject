@@ -23,11 +23,10 @@ import static android.content.Context.MODE_PRIVATE;
 public class TreerFagment extends Fragment {
 
     private View view;
-    private Button sendButton;
     private TextView treeNameText;
-    private EditText messageEdit;
-    private ImageView treeImage;
+
     int savedCount;
+    private ImageView treeImage;
     static private String SHARE_NAME="SHARE_REF";
 
     static SharedPreferences sharedPreferences;
@@ -40,7 +39,7 @@ public class TreerFagment extends Fragment {
         view = inflater.inflate(R.layout.fragment_tree, container, false);
         sharedPreferences=getActivity().getSharedPreferences(SHARE_NAME,MODE_PRIVATE);
         editor=sharedPreferences.edit();
-        sendButton=view.findViewById(R.id.sendButton);
+
         treeNameText=view.findViewById(R.id.treeName);
         savedCount=getSavedCount();
 
@@ -51,18 +50,6 @@ public class TreerFagment extends Fragment {
 
         GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
         Glide.with(getActivity()).load(R.drawable.growing).into(gifImage);
-
-
-        messageEdit=view.findViewById(R.id.messageEdit);
-
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                uploadData();
-
-            }
-        });
-
 
         return view;
     }
@@ -92,18 +79,5 @@ public class TreerFagment extends Fragment {
 //
 //        }
     }
-    public void uploadData(){
-        String data=messageEdit.getText().toString();
-        if(data != null && !data.equals("") ) {
 
-            setSavedCount();
-            messageEdit.setText("");
-            Toast.makeText(getActivity(), "멋진 메시지에요!", Toast.LENGTH_SHORT).show();
-            treeNameText.setText(String.valueOf(getSavedCount()));
-
-        }else{
-            Toast.makeText(getActivity(), "메시지를 다시한번 확인해 주세요", Toast.LENGTH_SHORT).show();
-
-        }
-    }
 }
