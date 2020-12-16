@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "562988822661",
+    "project_id": "cloverpark-bcdd0",
+    "storage_bucket": "cloverpark-bcdd0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562988822661:android:77624f1187b752884db9ec",
+        "android_client_info": {
+          "package_name": "halla.icsw.clover"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562988822661-7j8904c6mlmcm9rtkn2khp2hi5he8k7i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXEBA3QD51x-kswyv481F5hVeluqGyveA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562988822661-7j8904c6mlmcm9rtkn2khp2hi5he8k7i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

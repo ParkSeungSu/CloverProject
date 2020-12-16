@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuitem_bottombar_home"
+        android:icon="?android:attr/textSelectHandleRight"
+        android:title="Home" />
+    <item
+        android:id="@+id/menuitem_bottombar_message"
+        android:icon="?android:attr/textSelectHandle"
+        android:title="Message" />
+    <item
+        android:id="@+id/menuitem_bottombar_tree"
+
+        android:icon="?android:attr/textSelectHandleLeft"
+        android:title="Tree" />
+</menu>
