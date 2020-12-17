@@ -48,9 +48,6 @@ public class TreerFagment extends Fragment {
         treeImage=view.findViewById(R.id.treeImageView);
         treeImageSet();
 
-        GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
-        Glide.with(getActivity()).load(R.drawable.growing).into(gifImage);
-
         return view;
     }
     public void setSavedCount(){
@@ -63,21 +60,29 @@ public class TreerFagment extends Fragment {
     }
     public void treeImageSet(){
         savedCount=getSavedCount();
-//        if(){
-//
-//        }else if() {
-//
-//        }else if() {
-//
-//        }else if(){
-//
-//        }else if(){
-//
-//        }else if(){
-//
-//        }else {
-//
-//        }
+        if(savedCount>=0&&savedCount<=4){
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.growplant).into(gifImage);
+            Toast.makeText(getActivity(), "모두에게 응원의 메시지!", Toast.LENGTH_SHORT).show();
+        }else if(savedCount>=5&&savedCount<=9) {
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.plant2).into(gifImage);
+            Toast.makeText(getActivity(), "잎이 생겼어요!", Toast.LENGTH_SHORT).show();
+        }else if(savedCount>=10&&savedCount<=14) {
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.leaves).into(gifImage);
+            Toast.makeText(getActivity(), "쑥쑥 자랐어요!", Toast.LENGTH_SHORT).show();
+        }else if(savedCount>=15&&savedCount<=19) {
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.plant1).into(gifImage);
+            Toast.makeText(getActivity(), "무럭무럭 자랐어용!", Toast.LENGTH_SHORT).show();
+        }else if(savedCount>=20&&savedCount<=24) {
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.plant).into(gifImage);
+        }else {
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.clover).into(gifImage);
+        }
     }
 
 }
