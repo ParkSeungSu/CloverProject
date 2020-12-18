@@ -2,7 +2,9 @@ package halla.icsw.clover.fragment;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +29,7 @@ public class TreerFagment extends Fragment {
 
     int savedCount;
     private ImageView treeImage;
-    static private String SHARE_NAME="SHARE_REF";
+    static private String SHARE_NAME = "SHARE_REF";
 
     static SharedPreferences sharedPreferences;
     static SharedPreferences.Editor editor;
@@ -37,51 +39,69 @@ public class TreerFagment extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_tree, container, false);
-        sharedPreferences=getActivity().getSharedPreferences(SHARE_NAME,MODE_PRIVATE);
-        editor=sharedPreferences.edit();
+        sharedPreferences = getActivity().getSharedPreferences(SHARE_NAME, MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
-        treeNameText=view.findViewById(R.id.treeName);
-        savedCount=getSavedCount();
+        treeNameText = view.findViewById(R.id.treeName);
+        savedCount = getSavedCount();
 
         treeNameText.setText(String.valueOf(savedCount));
 
-        treeImage=view.findViewById(R.id.treeImageView);
+        treeImage = view.findViewById(R.id.treeImageView);
         treeImageSet();
 
         return view;
     }
-    public void setSavedCount(){
-        savedCount=getSavedCount()+1;
-        editor.putInt("count",savedCount);
+
+    public void setSavedCount() {
+        savedCount = getSavedCount() + 1;
+        editor.putInt("count", savedCount);
         editor.commit();
     }
-    public int getSavedCount(){
-        return sharedPreferences.getInt("count",0);
+
+    public int getSavedCount() {
+        return sharedPreferences.getInt("count", 0);
     }
-    public void treeImageSet(){
-        savedCount=getSavedCount();
-        if(savedCount>=0&&savedCount<=4){
+
+    public void treeImageSet() {
+        savedCount = getSavedCount();
+        if (savedCount >= 0 && savedCount <= 4) {
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
-            Glide.with(getActivity()).load(R.drawable.growplant).into(gifImage);
+            Glide.with(getActivity()).load(R.drawable.tree1).override(600,600).into(gifImage);
             Toast.makeText(getActivity(), "모두에게 응원의 메시지!", Toast.LENGTH_SHORT).show();
-        }else if(savedCount>=5&&savedCount<=9) {
+        } else if (savedCount >= 5 && savedCount <= 9) {
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
-            Glide.with(getActivity()).load(R.drawable.plant2).into(gifImage);
+            Glide.with(getActivity()).load(R.drawable.tree2).override(600,600).into(gifImage);
             Toast.makeText(getActivity(), "잎이 생겼어요!", Toast.LENGTH_SHORT).show();
-        }else if(savedCount>=10&&savedCount<=14) {
+        } else if (savedCount >= 10 && savedCount <= 14) {
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
-            Glide.with(getActivity()).load(R.drawable.leaves).into(gifImage);
+            Glide.with(getActivity()).load(R.drawable.tree3).override(600,600).into(gifImage);
             Toast.makeText(getActivity(), "쑥쑥 자랐어요!", Toast.LENGTH_SHORT).show();
-        }else if(savedCount>=15&&savedCount<=19) {
+        } else if (savedCount >= 15 && savedCount <= 19) {
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
-            Glide.with(getActivity()).load(R.drawable.plant1).into(gifImage);
+            Glide.with(getActivity()).load(R.drawable.tree4).override(600,600).into(gifImage);
             Toast.makeText(getActivity(), "무럭무럭 자랐어용!", Toast.LENGTH_SHORT).show();
-        }else if(savedCount>=20&&savedCount<=24) {
+        } else if (savedCount >= 20 && savedCount <= 24) {
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
-            Glide.with(getActivity()).load(R.drawable.plant).into(gifImage);
+            Glide.with(getActivity()).load(R.drawable.tree5).override(600,600).into(gifImage);
+        } else if (savedCount >= 25 && savedCount <= 29) {
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.tree6).override(600,600).into(gifImage);
+        } else if (savedCount >= 30 && savedCount <= 34) {
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.tree7).override(600,600).into(gifImage);
+        } else if (savedCount >= 35 && savedCount <= 39) {
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.tree8).override(600,600).into(gifImage);
+        } else if (savedCount >= 40 && savedCount <= 44) {
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.tree9).override(600,600).into(gifImage);
+        } else if (savedCount >= 45 && savedCount <= 49) {
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
+            Glide.with(getActivity()).load(R.drawable.tree10).override(600,600).into(gifImage);
         }else {
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(treeImage);
-            Glide.with(getActivity()).load(R.drawable.clover).into(gifImage);
+            Glide.with(getActivity()).load(R.drawable.tree11).override(600,600).into(gifImage);
         }
     }
 

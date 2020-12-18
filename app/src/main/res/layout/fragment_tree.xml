@@ -22,8 +22,8 @@
         <ImageView
             android:id="@+id/treeImageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/growing"
+            android:layout_height="300dp"
+            android:src="@drawable/tree1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
