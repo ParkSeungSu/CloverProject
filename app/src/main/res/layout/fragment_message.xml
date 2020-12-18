@@ -10,55 +10,70 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
+            android:layout_marginTop="48dp"
             android:src="@drawable/paperplane"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="14dp"
+            android:fontFamily="@font/tmoneyroundwindregular"
+            android:text="친구와 가족에게 행운의 클로버가 되어주세요."
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/messageEdit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.482" />
 
         <EditText
             android:id="@+id/messageEdit"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="300dp"
             android:layout_margin="10dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/bg_custom_button"
+            android:fontFamily="@font/tmoneyroundwindregular"
             android:hint="  내용을 작성해주세요\n 당신의 마음이 전달됩니다! "
             android:textColor="#5A5757"
             android:textColorHint="#BDBDBD"
+            app:layout_constraintBottom_toTopOf="@+id/sendButton"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Button
             android:id="@+id/sendButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="89dp"
-            android:layout_marginEnd="108dp"
-            android:layout_marginBottom="104dp"
+            android:layout_margin="10dp"
             android:text="전달하기"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/messageEdit" />
+            app:layout_constraintBottom_toTopOf="@+id/voiceButton" />
 
         <ImageButton
             android:id="@+id/voiceButton"
             style="@style/Widget.AppCompat.ImageButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="132dp"
-            android:layout_marginTop="97dp"
-            android:layout_marginBottom="112dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/Theme3"
             android:src="@android:drawable/ic_btn_speak_now"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/messageEdit" />
+            tools:layout_editor_absoluteX="0dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
